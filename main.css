@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
 :root {
     --colour__background: #f5f5fa;
     --colour__overlay: #e9e9ed;
@@ -9,30 +11,68 @@
     --height__nav-bar: 3.5rem;
 }
 
+html {
+    font-family: "Karla", Karla, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background-color: var(--colour__background, #faf4f4);
+    color: var(--colour__text, #292727);
+}
+
+h1 {
+    text-align: center;
+
+    font-size: 4rem;
+    width: 80%;
+    margin: 0.5rem auto;
+}
+
+h2 {
+    text-align: center;
+    width: 80%;
+    margin: 0.5rem auto;
+}
+
+p {
+    text-align: center;
+    width: 80%;
+    margin: 0.5rem auto;
+}
+
+header {
+    position: sticky;
+    top: 1rem;
+}
+
 .nav-bar ul {
-    width: 100%;
-    height: var(--height__nav-bar);
-    position: absolute;
-    top: 0;
-    left: 0;
-    list-style-type: none;
-    margin: 0;
+    margin: 1rem auto;
     padding: 0;
+    
+    width: 50%;
+    height: var(--height__nav-bar);
+
+    list-style-type: none;
+
+    background-color: var(--colour__overlay);
+    border-radius: 2rem;
+
     overflow-y: hidden;
     overflow-x: scroll;
-    background-color: var(--colour__overlay);
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
 .nav-bar li {
-    float: right;
-    /* margin: auto 10px; */
-    margin: 0 10px;
-    padding: 8px;
+    margin: 0 0.7rem;
+    padding: 0.5rem;
     transition-duration: 300ms;
+    border-radius: 0.6rem;
 }
 
 .nav-bar li.active {
@@ -54,6 +94,7 @@
 
 .nav-bar li:hover {
     opacity: 100%;
+    background-color: var(--colour__accent);
 }
 
 .nav-bar a:active {
