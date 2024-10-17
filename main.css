@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-    --colour__background: #f5f5fa;
-    --colour__overlay: #e9e9ed;
-    --colour__text: #292727;
-    --colour__accent: #8dafff;
-
+    --hex__background: #f5f5fa;
+    --hex__overlay: #e9e9ed60;
+    --hex__text: #292727;
+    --hex__accent: #8dafff;
+    
     --opacity__inactive: 50%;
     
     --height__nav-bar: 3.5rem;
@@ -19,8 +19,8 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
 
-    background-color: var(--colour__background, #faf4f4);
-    color: var(--colour__text, #292727);
+    background-color: var(--hex__background, #faf4f4);
+    color: var(--hex__text, #292727);
 }
 
 h1 {
@@ -48,7 +48,24 @@ header {
     top: 1rem;
 }
 
+@keyframes nav-bar__appear {
+    from {
+        background-color: var(--hex__background);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+    to {
+        background-color: var(--hex__overlay);
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+    }
+}
+
 .nav-bar ul {
+    animation: nav-bar__appear linear;
+    animation-timeline: scroll();
+    animation-range: 0 2rem;
+
     margin: 1rem auto;
     padding: 0;
     
@@ -57,7 +74,9 @@ header {
 
     list-style-type: none;
 
-    background-color: var(--colour__overlay);
+    background-color: var(--hex__overlay);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
     border-radius: 2rem;
 
     overflow-y: hidden;
@@ -89,14 +108,14 @@ header {
 }
 
 .nav-bar a:link, a:visited {
-    color: var(--colour__text);
+    color: var(--hex__text);
 }
 
 .nav-bar li:hover {
     opacity: 100%;
-    background-color: var(--colour__accent);
+    background-color: var(--hex__accent);
 }
 
 .nav-bar a:active {
-    color: var(--colour__text);
+    color: var(--hex__text);
 }
