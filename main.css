@@ -2,9 +2,11 @@
 
 :root {
     --hex__background: #f5f5fa;
-    --hex__overlay: #e9e9ed60;
+    --hex__overlay: #f3f3f3ab;
     --hex__text: #292727;
     --hex__accent: #8dafff;
+
+    --gradient__background: linear-gradient(55deg, #92dbc5 0%, #eddbd2 51%, #d0e8cc 85%);
     
     --opacity__inactive: 50%;
     
@@ -19,7 +21,8 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
 
-    background-color: var(--hex__background, #faf4f4);
+    background: var(--gradient__background);
+    /* background-color: var(--hex__background, #faf4f4); */
     color: var(--hex__text, #292727);
 }
 
@@ -45,31 +48,33 @@ p {
 
 header {
     position: sticky;
-    top: 1rem;
+    top: 1.25rem;
 }
 
 @keyframes nav-bar__appear {
     from {
-        background-color: var(--hex__background);
+        /* background-color: var(--hex__background); */
+        background-color: #ffffff00;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
     }
     to {
         background-color: var(--hex__overlay);
-        backdrop-filter: blur(1rem);
-        -webkit-backdrop-filter: blur(1rem);
+        backdrop-filter: blur(2.5rem);
+        -webkit-backdrop-filter: blur(2.5rem);
     }
 }
 
 .nav-bar ul {
     animation: nav-bar__appear linear;
     animation-timeline: scroll();
-    animation-range: 0 2rem;
+    
+    animation-range: 0 6rem;
 
     margin: 1rem auto;
     padding: 0;
     
-    width: 50%;
+    width: fit-content;
     height: var(--height__nav-bar);
 
     list-style-type: none;
@@ -89,7 +94,7 @@ header {
 
 .nav-bar li {
     margin: 0 0.7rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     transition-duration: 300ms;
     border-radius: 0.6rem;
 }
