@@ -16,6 +16,8 @@
     
     --opacity__inactive: 50%;
     
+    --width__readable: min(60vw, 700px);
+
     --height__nav-bar: 3.5rem;
 }
 
@@ -88,7 +90,11 @@ body {
     transform-origin: -50% -50%;
     
     rotate: var(--bg__blob-angle);
-    animation: background__float 10s linear infinite;
+    animation: background__float 60s linear infinite;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    width: var(--width__readable);
 }
 
 h1 {
@@ -97,20 +103,17 @@ h1 {
     line-height: 120%;
 
     font-size: 7rem;
-    width: min(80vw, 800px);
     margin: 0 auto;
 }
 
 h2 {
     text-align: left;
     font-size: 2rem;
-    width: min(80vw, 800px);
     margin: 0 auto;
 }
 
 p {
     text-align: center;
-    width: min(80vw, 800px);
     margin: 0.5rem auto;
 }
 
@@ -199,32 +202,59 @@ header {
 }
 
 div.heading__profession-wrapper {
-    width: fit-content;
-    margin: 0 min(20vw, 400px);
+    width: var(--width__readable);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: left;
+    align-items: baseline;
 }
 
 h2.heading__profession {
-    width: fit-content;
+    text-align: left;
     padding: 0 1rem;
+    width: fit-content;
+}
+
+@keyframes heading__profession-scroll {
+
+}
+
+div.heading__profession {
+    width: 27rem;
 }
 
 .heading__profession ul {
-    display: flex inline;
+    display: flex;
 
-    width: 40vw;
+    width: 100%;
 
     margin: 0 auto;
-    font-size: 2rem;
+    padding: 0;
+    font-size: 1.25rem;
     overflow-x: scroll;
     overflow-y: hidden;
-    
+
     scroll-snap-align: center;
     scroll-snap-type: x mandatory;
-    gap: 10vw;
+    gap: none;
+    text-align: left;
     
     -ms-overflow-style: none;
     scrollbar-width: none;
     list-style-type: none;
 
     white-space: nowrap;
+
+    animation-name: heading__profession-scroll;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.heading__profession li {
+    flex: 0 0 100%;
+}
+
+.heading__profession ul::-webkit-scrollbar {
+    display: none;
 }
