@@ -238,7 +238,7 @@ h2.heading__profession {
 
 div.heading__profession {
     width: 27rem;
-    height: 2rem;
+    height: 100%;
 }
 
 .heading__profession ul {
