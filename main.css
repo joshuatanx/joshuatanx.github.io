@@ -93,6 +93,22 @@ body {
     animation: background__float 60s linear infinite;
 }
 
+.hidden {
+    opacity: 0;
+    filter: blur(0.3rem);
+    -webkit-filter: blur(0.3rem);
+    transform: translate(-100%);
+    transition: all 1s;
+}
+
+.visible {
+    opacity: 1;
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    transform: translate(0);
+    transition: all 1s;
+}
+
 h1, h2, h3, h4, h5, h6, p {
     width: var(--width__readable);
 }
@@ -222,37 +238,37 @@ h2.heading__profession {
 
 div.heading__profession {
     width: 27rem;
+    height: 2rem;
 }
 
 .heading__profession ul {
+    position: relative;
+
     display: flex;
+    flex-direction: column;
+    align-items: baseline;
 
-    width: 100%;
-
-    margin: 0 auto;
     padding: 0;
-    font-size: 1.25rem;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    margin: 0;
 
-    scroll-snap-align: center;
-    scroll-snap-type: x mandatory;
-    gap: none;
-    text-align: left;
-    
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    list-style-type: none;
+    height: 100%;
 
+    font-size: 2rem;
+    list-style: none;
     white-space: nowrap;
 
     animation-name: heading__profession-scroll;
-    animation-duration: 2s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
 }
 
-.heading__profession li {
-    flex: 0 0 100%;
+.heading__profession ul li {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    vertical-align: baseline;
 }
 
 .heading__profession ul::-webkit-scrollbar {

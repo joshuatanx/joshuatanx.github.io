@@ -8,8 +8,6 @@ function convertRemToPixels(rem) {
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
-let professions;
-
 const options = {
     root: document.getElementById("heading__profession-list"),
     rootMargin: "0px",
@@ -19,11 +17,26 @@ const options = {
 const observer = new IntersectionObserver(handleIntersection, options);
 observer.observe(document.getElementById("heading__profession-item1"));
 
-professions = document.getElementById("heading__profession-list");
+const professions = document.getElementById("heading__profession-list");
+const professionQuantity = professions.children.length;
+
 observer.observe(professions);
 professions.addEventListener("animationiteration", () => {
     scrollProfession();
 });
+
+function scrollProfession() {
+    for (let i = 0; i < professionQuantity; i++) {
+        if (professions.children[i].classList.contains("visible") == true) {
+            console.log(professions.children[i].classList);
+            professions.children[i].classList.remove("visible");
+            professions.children[i].classList.add("hidden");
+            professions.children[(i + 1) % professionQuantity].classList.remove("hidden");
+            professions.children[(i + 1) % professionQuantity].classList.add("visible");
+            break;
+        }
+    }
+}
 
 /* document.addEventListener("DOMContentLoaded", () => {
     professions = document.getElementById("heading__profession-list");
@@ -42,15 +55,16 @@ professions.addEventListener("animationiteration", () => {
     }
 }); */
 
-function scrollProfession() {
+
+/* function scrollProfession() {
     console.log(professions.getBoundingClientRect().width);
     professions.scrollBy(professions.getBoundingClientRect().width, 0);
-}
+} */
 
 function handleIntersection(entries, observer) {
     entries.forEach((entry) => {
         if (entry.intersectionRatio >= 0.5) {
-            entry.target.style.backgroundColor = "black";
+            
         }
         
     });
