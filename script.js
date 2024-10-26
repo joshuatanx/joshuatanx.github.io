@@ -28,9 +28,11 @@ professions.addEventListener("animationiteration", () => {
 function scrollProfession() {
     for (let i = 0; i < professionQuantity; i++) {
         if (professions.children[i].classList.contains("visible") == true) {
-            console.log(professions.children[i].classList);
             professions.children[i].classList.remove("visible");
             professions.children[i].classList.add("hidden");
+            professions.children[i].style.animation = "hide 2s";
+            
+            professions.children[(i + 1) % professionQuantity].style.animation = "";
             professions.children[(i + 1) % professionQuantity].classList.remove("hidden");
             professions.children[(i + 1) % professionQuantity].classList.add("visible");
             break;
