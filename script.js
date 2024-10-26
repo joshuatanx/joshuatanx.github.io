@@ -15,31 +15,13 @@ const options = {
 };
 
 const observer = new IntersectionObserver(handleIntersection, options);
-observer.observe(document.getElementById("heading__profession-item1"));
 
-const professions = document.getElementById("heading__profession-list");
-const professionQuantity = professions.children.length;
+const profession = document.getElementById("profession");
 
-observer.observe(professions);
-professions.addEventListener("animationiteration", () => {
-    // scrollProfession();
-    typewrite(document.getElementById("test"), "i am NOT passing decision theory");
+observer.observe(profession);
+profession.addEventListener("animationiteration", () => {
+    typewrite(document.getElementById("profession"), "i am NOT passing decision theory");
 });
-
-function scrollProfession() {
-    for (let i = 0; i < professionQuantity; i++) {
-        if (professions.children[i].classList.contains("visible") == true) {
-            professions.children[i].classList.remove("visible");
-            professions.children[i].classList.add("hidden");
-            professions.children[i].style.animation = "hide 2s";
-            
-            professions.children[(i + 1) % professionQuantity].style.animation = "";
-            professions.children[(i + 1) % professionQuantity].classList.remove("hidden");
-            professions.children[(i + 1) % professionQuantity].classList.add("visible");
-            break;
-        }
-    }
-}
 
 function typewrite(element, text) {
 
@@ -59,6 +41,23 @@ function typewrite(element, text) {
         return;
     }
 }
+
+function scrollProfession() {
+    for (let i = 0; i < professionQuantity; i++) {
+        if (profession.children[i].classList.contains("visible") == true) {
+            profession.children[i].classList.remove("visible");
+            profession.children[i].classList.add("hidden");
+            profession.children[i].style.animation = "hide 2s";
+            
+            profession.children[(i + 1) % professionQuantity].style.animation = "";
+            profession.children[(i + 1) % professionQuantity].classList.remove("hidden");
+            profession.children[(i + 1) % professionQuantity].classList.add("visible");
+            break;
+        }
+    }
+}
+
+
 
 /* document.addEventListener("DOMContentLoaded", () => {
     professions = document.getElementById("heading__profession-list");
