@@ -22,7 +22,8 @@ const professionQuantity = professions.children.length;
 
 observer.observe(professions);
 professions.addEventListener("animationiteration", () => {
-    scrollProfession();
+    // scrollProfession();
+    typewrite(document.getElementById("test"), "i am NOT passing decision theory");
 });
 
 function scrollProfession() {
@@ -37,6 +38,25 @@ function scrollProfession() {
             professions.children[(i + 1) % professionQuantity].classList.add("visible");
             break;
         }
+    }
+}
+
+function typewrite(element, text) {
+
+    if (element.innerHTML == text) {
+        return;
+    }
+
+    let length = element.innerHTML.length;
+
+    if (text.search(element.innerHTML) != 0) {
+        element.innerHTML = element.innerHTML.substr(0, length - 1);
+        return;
+    }
+
+    if (text.search(element.innerHTML) == 0) {
+        element.innerHTML = element.innerHTML.concat(text[length]);
+        return;
     }
 }
 

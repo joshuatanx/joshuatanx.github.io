@@ -276,7 +276,7 @@ div.heading__profession {
     white-space: nowrap;
 
     animation-name: heading__profession-scroll;
-    animation-duration: 5s;
+    animation-duration: 0.15s;
     animation-iteration-count: infinite;
 }
 
@@ -294,3 +294,16 @@ div.heading__profession {
 .heading__profession ul::-webkit-scrollbar {
     display: none;
 }
+
+#test {
+    
+    width: fit-content;
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
