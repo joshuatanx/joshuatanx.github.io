@@ -12,11 +12,11 @@
     --hex__background3: #ecd4c1;
     --hex__background4: #f9d6b9;
 
-    --font-size__h1: 8rem;
-    --font-size__h2: 3rem;
-    --font-size__h3: 2rem;
-    --font-size__h4: 1rem;
-    --font-weight__h4: 500;
+    --font-size__h1: 4rem;
+    --font-size__h2: 1.5rem;
+    --font-size__h3: 1rem;
+    --font-size__h4: 0.75rem;
+    --font-size__p: 0.5rem;
 
     --gradient__background: linear-gradient(55deg, var(--hex__background4) 0%, var(--hex__background3) 51%, var(--hex__background2) 85%);
     
@@ -27,6 +27,38 @@
     --width__project: min(72.9vw, 850px);
 
     --height__nav-bar: 3.5rem;
+}
+
+@media only screen and (width > 500px) {
+    :root {
+        --font-size__h1: 6rem;
+        --font-size__h2: 2.25rem;
+        --font-size__h3: 1.5rem;
+        --font-size__h4: 1.125rem;
+        --font-size__p: 0.75rem;
+    }
+}
+
+@media only screen and (width > 600px) {
+    :root {
+        --font-size__h1: 7rem;
+        --font-size__h2: 2.625rem;
+        --font-size__h3: 1.75rem;
+        --font-size__h4: 1.3125rem;
+        --font-size__p: 0.875rem;
+        --font-weight__h4: 500;
+    }
+}
+
+@media only screen and (width > 700px) {
+    :root {
+        --font-size__h1: 8rem;
+        --font-size__h2: 3rem;
+        --font-size__h3: 2rem;
+        --font-size__h4: 1.5rem;
+        --font-size__p: 1rem;
+        --font-weight__h4: 500;
+    }
 }
 
 html {
@@ -263,7 +295,7 @@ span.heading__profession {
     display: inline;
     width: fit-content;
 
-    font-size: 1.5rem;
+    font-size: var(--font-size__h4);
 
     animation: heading__profession-type 0.08s infinite;
 }
