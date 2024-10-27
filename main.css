@@ -286,7 +286,7 @@ div.project.wrapper {
 
 div.project.title {
     display: grid;
-    grid-template-columns: 12rem min-content auto;
+    grid-template-columns: minmax(0, 1fr) min-content minmax(0, 1fr);
 }
 
 .project h3, .project h4 {
@@ -302,6 +302,8 @@ div.project.title {
 
 .project span {
     width: 0.1rem;
+    height: 75%;
+    margin: auto 0;
     background-color: var(--hex__text);
 }
 
