@@ -5,26 +5,26 @@
     --hex__background: #f5f5fa;
     --hex__overlay: #ffffff6e;
     --hex__text: #292727;
-    --hex__accent: #8dafff;
+    --hex__accent: #fbb8bc;
 
-    --hex__background1: #9fa2f3;
-    --hex__background2: #a2b9ee;
-    --hex__background3: #c1ece9;
-    --hex__background4: #d4f6f0;
-
-    /* --hex__background1: #9a9cea;
-    --hex__background2: #a2b9ee;
-    --hex__background3: #a2dcee;
-    --hex__background4: #adeee2; */
+    --hex__background1: #f39fb5;
+    --hex__background2: #fbe0ea;
+    --hex__background3: #ecd4c1;
+    --hex__background4: #f9d6b9;
 
     --font-size__h1: 8rem;
+    --font-size__h2: 3rem;
+    --font-size__h3: 2rem;
+    --font-size__h4: 1rem;
+    --font-weight__h4: 500;
 
-    --gradient__background: linear-gradient(55deg, var(--hex__background2) 0%, var(--hex__background3) 51%, var(--hex__background4) 85%);
+    --gradient__background: linear-gradient(55deg, var(--hex__background4) 0%, var(--hex__background3) 51%, var(--hex__background2) 85%);
     
     --opacity__inactive: 50%;
     
-    --width__heading: min(70vw, 800px);
+    --width__heading: min(68.6vw, 800px);
     --width__readable-body: min(60vw, 700px);
+    --width__project: min(72.9vw, 850px);
 
     --height__nav-bar: 3.5rem;
 }
@@ -110,6 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     width: var(--width__readable-body);
     margin: 1rem auto;
+    text-indent: 1.5rem;
 }
 
 h1 {
@@ -119,9 +120,17 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: var(--font-size__h2);
 }
 
+h3 {
+    font-size: var(--font-size__h3);
+}
+
+h4 {
+    font-size: var(--font-size__h4);
+    font-weight: var(--font-weight__h4);
+}
 
 header {
     position: sticky;
@@ -204,7 +213,7 @@ header {
 }
 
 .heading h1 {
-    margin-top: 5rem;
+    margin-top: 3.5rem;
     margin-bottom: 0;
 }
 
@@ -215,7 +224,7 @@ header {
 }
 
 div.heading__profession.wrapper {
-    width: var(--width__readable-body);
+    width: min(var(--width__readable-body), 30rem);
 
     margin: 0 auto;
 
@@ -226,14 +235,11 @@ div.heading__profession.wrapper {
     align-items: baseline;
 }
 
-h2.heading__profession {
+h3.heading__profession {
     text-align: left;
-    padding: 0 1rem 0 0;
+    
+    padding-right: 0.5rem;
     width: fit-content;
-}
-
-@keyframes heading__profession-scroll {
-
 }
 
 div.heading__profession:not(wrapper) {
@@ -266,4 +272,44 @@ span.heading__profession {
     50% {
       border-color: transparent;
     }
+}
+
+div.project.wrapper {
+    width: var(--width__readable-body);
+    margin: 1rem auto;
+    padding: 2rem;
+
+    background-color: var(--hex__overlay);
+    border-radius: 3rem;
+    
+}
+
+div.project.title {
+    display: grid;
+    grid-template-columns: 12rem min-content auto;
+}
+
+.project h3, .project h4 {
+    /* display: inline; */
+    width: fit-content;
+    margin: auto 1rem;
+}
+
+.project h3 {
+    text-align: right;
+    justify-self: right;
+}
+
+.project span {
+    width: 0.1rem;
+    background-color: var(--hex__text);
+}
+
+.project h4 {
+    text-align: left;
+    justify-self: left;
+}
+
+.project p {
+    text-align: center;
 }
