@@ -22,7 +22,7 @@ const professions = {
         "a wannabe software engineer",
         "studying math and CS for AI",
         "a guitarist",
-        "learning web dev",
+        "learning web development",
         "a music producer",
         "an occasional fashion designer",
         "an aspiring game developer"],
