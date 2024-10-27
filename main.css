@@ -38,7 +38,7 @@ body {
     min-height: 100dvh;
     max-width: 100vw;
 
-    margin: 1rem;
+    margin: 2rem;
 
     background: var(--gradient__background);
     /* background-color: var(--hex__background, #faf4f4); */
@@ -107,7 +107,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
     width: var(--width__heading);
-    margin: 1rem auto;
+    margin: 2rem auto;
 }
 
 p {
@@ -281,7 +281,7 @@ span.heading__profession {
 
 div.project.wrapper {
     width: var(--width__readable-body);
-    margin: 1rem auto;
+    margin: 2rem auto;
     padding: 2rem;
 
     background-color: var(--hex__overlay);
