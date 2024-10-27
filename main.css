@@ -12,53 +12,22 @@
     --hex__background3: #ecd4c1;
     --hex__background4: #f9d6b9;
 
-    --font-size__h1: 4rem;
-    --font-size__h2: 1.5rem;
-    --font-size__h3: 1rem;
-    --font-size__h4: 0.75rem;
-    --font-size__p: 0.5rem;
+    --font-size__h1: clamp(4rem, 32vw, 8rem);
+    --font-size__h2: clamp(1.5rem, 12vw, 3rem);
+    --font-size__h3: clamp(1rem, 8vw, 2rem);
+    --font-size__h4: clamp(0.75rem, 6vw, 1.5rem);
+    --font-size__p: clamp(0.5rem, 4vw, 1rem);
+    --font-weight__h4: 500;
 
     --gradient__background: linear-gradient(55deg, var(--hex__background4) 0%, var(--hex__background3) 51%, var(--hex__background2) 85%);
     
     --opacity__inactive: 50%;
     
-    --width__heading: min(68.6vw, 800px);
+    --width__heading: min(88vw, 800px);
     --width__readable-body: min(60vw, 700px);
     --width__project: min(72.9vw, 850px);
 
     --height__nav-bar: 3.5rem;
-}
-
-@media only screen and (width > 500px) {
-    :root {
-        --font-size__h1: 6rem;
-        --font-size__h2: 2.25rem;
-        --font-size__h3: 1.5rem;
-        --font-size__h4: 1.125rem;
-        --font-size__p: 0.75rem;
-    }
-}
-
-@media only screen and (width > 600px) {
-    :root {
-        --font-size__h1: 7rem;
-        --font-size__h2: 2.625rem;
-        --font-size__h3: 1.75rem;
-        --font-size__h4: 1.3125rem;
-        --font-size__p: 0.875rem;
-        --font-weight__h4: 500;
-    }
-}
-
-@media only screen and (width > 700px) {
-    :root {
-        --font-size__h1: 8rem;
-        --font-size__h2: 3rem;
-        --font-size__h3: 2rem;
-        --font-size__h4: 1.5rem;
-        --font-size__p: 1rem;
-        --font-weight__h4: 500;
-    }
 }
 
 html {
@@ -68,6 +37,8 @@ html {
 body {
     min-height: 100dvh;
     max-width: 100vw;
+
+    margin: 1rem;
 
     background: var(--gradient__background);
     /* background-color: var(--hex__background, #faf4f4); */
@@ -143,6 +114,7 @@ p {
     width: var(--width__readable-body);
     margin: 1rem auto;
     text-indent: 1.5rem;
+    font-size: var(--font-size__p);
 }
 
 h1 {
@@ -195,6 +167,7 @@ header {
     width: fit-content;
     height: var(--height__nav-bar);
 
+    font-size: var(--font-size__p);
     list-style-type: none;
 
     background-color: var(--hex__overlay);
