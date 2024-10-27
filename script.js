@@ -27,12 +27,12 @@ const professions = {
         "an occasional fashion designer",
         "an aspiring game developer"],
     counter: 0,
-    cooldown: 15
+    cooldown: 30
 };
 
 observer.observe(profession);
 profession.addEventListener("animationiteration", () => {
-    cycleProfession(document.getElementById("profession"), professions, 15);
+    cycleProfession(document.getElementById("profession"), professions, 40);
 });
 
 function typewrite(element, text) {

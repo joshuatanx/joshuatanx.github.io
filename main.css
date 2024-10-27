@@ -7,10 +7,15 @@
     --hex__text: #292727;
     --hex__accent: #8dafff;
 
-    --hex__background1: #9a9cea;
+    --hex__background1: #9fa2f3;
+    --hex__background2: #a2b9ee;
+    --hex__background3: #c1ece9;
+    --hex__background4: #d4f6f0;
+
+    /* --hex__background1: #9a9cea;
     --hex__background2: #a2b9ee;
     --hex__background3: #a2dcee;
-    --hex__background4: #adeee2;
+    --hex__background4: #adeee2; */
 
     --gradient__background: linear-gradient(55deg, var(--hex__background2) 0%, var(--hex__background3) 51%, var(--hex__background4) 85%);
     
@@ -126,26 +131,27 @@ body {
 
 h1, h2, h3, h4, h5, h6, p {
     width: var(--width__readable);
+    margin: 1rem auto;
 }
 
 h1 {
     text-align: left;
 
-    line-height: 120%;
+    line-height: 100%;
 
     font-size: 7rem;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 h2 {
     text-align: left;
     font-size: 2rem;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 p {
     text-align: center;
-    margin: 0.5rem auto;
+    margin: 1rem auto;
 }
 
 header {
@@ -228,6 +234,10 @@ header {
     color: var(--hex__text);
 }
 
+.heading h1 {
+    margin-bottom: 0;
+}
+
 .heading__profession {
     display: inline;
 }
@@ -246,6 +256,8 @@ div.heading__profession.wrapper {
 
 h2.heading__profession {
     text-align: left;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0 1rem 0 0;
     width: fit-content;
 }
@@ -256,7 +268,7 @@ h2.heading__profession {
 
 div.heading__profession:not(wrapper) {
     width: 27rem;
-    height: 100%;
+    height: fit-content;
 }
 
 @keyframes heading__profession-type {
