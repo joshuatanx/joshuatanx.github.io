@@ -12,11 +12,12 @@
     --hex__background3: #ecd4c1;
     --hex__background4: #f9d6b9;
 
-    --font-size__h1: clamp(4rem, 32vw, 8rem);
-    --font-size__h2: clamp(1.5rem, 12vw, 3rem);
-    --font-size__h3: clamp(1rem, 8vw, 2rem);
-    --font-size__h4: clamp(0.75rem, 6vw, 1.5rem);
-    --font-size__p: clamp(0.5rem, 4vw, 1rem);
+    --font-size__base: 3vw;
+    --font-size__h1: clamp(4rem, var(--font-size__base) * 8, 8rem);
+    --font-size__h2: clamp(1.5rem, var(--font-size__base) * 3, 3rem);
+    --font-size__h3: clamp(1rem, var(--font-size__base) * 2, 2rem);
+    --font-size__h4: clamp(0.75rem, var(--font-size__base) * 1.5, 1.5rem);
+    --font-size__p: clamp(0.5rem, var(--font-size__base), 1rem);
     --font-weight__h4: 500;
 
     --gradient__background: linear-gradient(55deg, var(--hex__background4) 0%, var(--hex__background3) 51%, var(--hex__background2) 85%);
@@ -24,7 +25,7 @@
     --opacity__inactive: 50%;
     
     --width__heading: min(88vw, 800px);
-    --width__readable-body: min(60vw, 700px);
+    --width__readable-body: min(75vw, 700px);
     --width__project: min(72.9vw, 850px);
 
     --height__nav-bar: 3.5rem;
@@ -36,14 +37,20 @@ html {
 
 body {
     min-height: 100dvh;
-    max-width: 100vw;
+    /* min-width: 100vw;
+    max-width: 100%; */
+    width: 100%;
 
-    margin: 2rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
     background: var(--gradient__background);
     /* background-color: var(--hex__background, #faf4f4); */
     color: var(--hex__text, #292727);
+    
 }
+
 
 .background {
     width: 100vw;
@@ -230,11 +237,12 @@ header {
 
 div.heading__profession.wrapper {
     width: min(var(--width__readable-body), 30rem);
-
     margin: 0 auto;
 
     display: grid;
     grid-template-columns: auto auto;
+
+    overflow: hidden;
     
     justify-content: left;
     align-items: baseline;
