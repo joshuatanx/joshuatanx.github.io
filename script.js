@@ -17,70 +17,48 @@ const options = {
 const observer = new IntersectionObserver(handleIntersection, options);
 
 const profession = document.getElementById("profession");
+const professions = {
+    text: ["a university student",
+        "a wannabe software engineer",
+        "studying math and CS for AI",
+        "a guitarist",
+        "learning web dev",
+        "a music producer",
+        "an occasional fashion designer",
+        "an aspiring game developer"],
+    counter: 0
+};
 
 observer.observe(profession);
 profession.addEventListener("animationiteration", () => {
-    typewrite(document.getElementById("profession"), "i am NOT passing decision theory");
+    cycleProfession(document.getElementById("profession"), professions);
+    // typewrite(document.getElementById("profession"), "i am NOT passing decision theory");
 });
 
 function typewrite(element, text) {
-
     if (element.innerHTML == text) {
-        return;
+        return true;
     }
 
     let length = element.innerHTML.length;
 
     if (text.search(element.innerHTML) != 0) {
         element.innerHTML = element.innerHTML.substr(0, length - 1);
-        return;
+        return false;
     }
 
     if (text.search(element.innerHTML) == 0) {
         element.innerHTML = element.innerHTML.concat(text[length]);
-        return;
+        return false;
     }
 }
 
-function scrollProfession() {
-    for (let i = 0; i < professionQuantity; i++) {
-        if (profession.children[i].classList.contains("visible") == true) {
-            profession.children[i].classList.remove("visible");
-            profession.children[i].classList.add("hidden");
-            profession.children[i].style.animation = "hide 2s";
-            
-            profession.children[(i + 1) % professionQuantity].style.animation = "";
-            profession.children[(i + 1) % professionQuantity].classList.remove("hidden");
-            profession.children[(i + 1) % professionQuantity].classList.add("visible");
-            break;
-        }
+function cycleProfession(element, professions) {
+    if (typewrite(element, professions.text[professions.counter])) {
+        professions.counter = (professions.counter + 1) % professions.text.length;
     }
 }
 
-
-
-/* document.addEventListener("DOMContentLoaded", () => {
-    professions = document.getElementById("heading__profession-list");
-    if (professions) {
-        professions.addEventListener("animationiteration", () => {
-            // professions.scrollBy(convertRemToPixels(27), 0);
-            //scrollProfession();
-            
-            observer.observe(professions);
-        });
-    } else {
-        console.error("Element with ID 'heading__profession-list' not found");
-    }
-    if (document.getElementById("heading__profession-item1")) {
-        observer.observe(document.getElementById("heading__profession-item1"));
-    }
-}); */
-
-
-/* function scrollProfession() {
-    console.log(professions.getBoundingClientRect().width);
-    professions.scrollBy(professions.getBoundingClientRect().width, 0);
-} */
 
 function handleIntersection(entries, observer) {
     entries.forEach((entry) => {
@@ -90,6 +68,3 @@ function handleIntersection(entries, observer) {
         
     });
 }
-  
-
-
