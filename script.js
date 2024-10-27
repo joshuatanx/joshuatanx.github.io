@@ -26,13 +26,13 @@ const professions = {
         "a music producer",
         "an occasional fashion designer",
         "an aspiring game developer"],
-    counter: 0
+    counter: 0,
+    cooldown: 15
 };
 
 observer.observe(profession);
 profession.addEventListener("animationiteration", () => {
-    cycleProfession(document.getElementById("profession"), professions);
-    // typewrite(document.getElementById("profession"), "i am NOT passing decision theory");
+    cycleProfession(document.getElementById("profession"), professions, 15);
 });
 
 function typewrite(element, text) {
@@ -53,9 +53,15 @@ function typewrite(element, text) {
     }
 }
 
-function cycleProfession(element, professions) {
+function cycleProfession(element, professions, cooldown) {
     if (typewrite(element, professions.text[professions.counter])) {
+        if (professions.cooldown >= 0) {
+            professions.cooldown--;
+            return;
+        }
+
         professions.counter = (professions.counter + 1) % professions.text.length;
+        professions.cooldown = cooldown;
     }
 }
 
