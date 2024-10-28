@@ -1,9 +1,3 @@
-/* const professions = document.getElementById("heading__profession-list");
-professions.addEventListener("animationiteration", () => {
-    professions.scrollBy(50, 0);
-    console.log(`hi`);
-}); */
-
 function convertRemToPixels(rem) {    
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
@@ -29,6 +23,34 @@ const professions = {
     counter: 0,
     cooldown: 30
 };
+
+const pastProjectsSection = document.getElementById("section__past-projects");
+console.log("🚀 ~ pastProjectsSection:", pastProjectsSection);
+pastProjectsSection.addEventListener("mousemove",(event) => {
+    /* if (event.target.className === "project wrapper") {
+        event.target.style.setProperty("--opacity__blob", "1");
+    } */
+    if (event.target.classList.contains("project")) {
+        const box = event.target.getBoundingClientRect();
+        const x = event.clientX - box.left;
+        const y = event.clientY - box.top;
+
+        event.target.style.setProperty("--opacity__blob", "1");
+        event.target.style.setProperty("--x__cursor", x + "px");
+        event.target.style.setProperty("--y__cursor", y + "px");
+    }
+});
+        
+
+/* pastProjectsSection.addEventListener("mouseout",(event) => {
+    if (event.target.classList.contains("project") && event.target.classList.contains("wrapper")) {
+        event.target.style.setProperty("--opacity__blob", "0");
+    }
+}); */
+
+function followCursor() {
+
+}
 
 observer.observe(profession);
 profession.addEventListener("animationiteration", () => {
@@ -64,6 +86,9 @@ function cycleProfession(element, professions, cooldown) {
         professions.cooldown = cooldown;
     }
 }
+
+
+
 
 
 function handleIntersection(entries, observer) {

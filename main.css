@@ -270,18 +270,53 @@ div.heading__profession.wrapper {
     }
 }
 
+@property --x__cursor {
+    syntax: "<length>";
+    initial-value: 100px;
+}
+
+@property --y__cursor {
+    syntax: "<length>";
+    initial-value: -50px;
+}
+
 div.project.wrapper {
+    --opacity__blob: 0;
+
     position: relative;
 
     width: var(--width__readable-body);
     margin: 2rem auto;
     padding: 2rem;
 
+    overflow: hidden;
+
     background-color: var(--hex__overlay);
     border-radius: 2rem;
 }
 
 div.project.wrapper::after {
+    content: "";
+
+    width: 100px;
+    height: 100px;
+
+    position: absolute;
+    left: var(--x__cursor);
+    top: var(--y__cursor);
+    translate: -50% -50%;
+    z-index: -1;
+
+    background-color: var(--hex__accent);
+
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: var(--opacity__blob);
+    
+    clip-path: inherit;    
+}
+
+/* div.project.wrapper::after {
     height: 100%;
     width: 100%;
 
@@ -306,7 +341,7 @@ div.project.wrapper::after {
     div.project.wrapper:hover::after {
         opacity: 1;
     }
-}
+} */
 
 div.project.title {
     display: grid;
@@ -314,13 +349,9 @@ div.project.title {
     grid-template-columns: max-content min-content auto;
 }
 
-.project h3, .project h4 {
-    /* display: inline; */
+.project h3 {
     width: fit-content;
     margin: auto 1rem;
-}
-
-.project h3 {
     text-align: right;
     justify-self: right;
 }
@@ -330,11 +361,6 @@ div.project.title {
     height: 75%;
     margin: auto 0;
     background-color: var(--hex__text);
-}
-
-.project h4 {
-    text-align: left;
-    justify-self: left;
 }
 
 .project p {
