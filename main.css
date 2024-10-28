@@ -278,7 +278,7 @@ div.project.wrapper {
     padding: 2rem;
 
     background-color: var(--hex__overlay);
-    border-radius: 3rem;
+    border-radius: 2rem;
 }
 
 div.project.wrapper::after {
@@ -294,7 +294,7 @@ div.project.wrapper::after {
     padding: 0.25rem;
 
     background: var(--linear-gradient__background);
-    border-radius: 3.25rem;
+    border-radius: 2.25rem;
     opacity: 0;
 
     content: "";
@@ -338,5 +338,32 @@ div.project.title {
 }
 
 .project p {
+    margin-top: 1rem;
+    margin-bottom: 0;
     text-align: center;
+}
+
+ul.chips {
+    margin: auto 1rem;
+    padding: 0;
+
+    overflow-x: scroll;
+
+    scrollbar-width: none;
+
+    height: fit;
+    list-style-type: none;
+    display: flex;
+}
+
+ul.chips::-webkit-scrollbar {
+    display: none;
+}
+
+li.chip {
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+
+    background-color: var(--hex__overlay);
+    border-radius: 1.25rem;
 }
