@@ -20,12 +20,12 @@
     --font-size__p: clamp(0.5rem, var(--font-size__base), 1rem);
     --font-weight__h4: 500;
 
-    --gradient__background: linear-gradient(55deg, var(--hex__background4) 0%, var(--hex__background3) 51%, var(--hex__background2) 85%);
+    --linear-gradient__background: linear-gradient(55deg, var(--hex__background4) 0%, var(--hex__background3) 51%, var(--hex__background2) 85%);
     
     --opacity__inactive: 50%;
     
     --width__heading: min(88vw, 800px);
-    --width__readable-body: min(75vw, 700px);
+    --width__readable-body: min(68vw, 700px);
     --width__project: min(72.9vw, 850px);
 
     --height__nav-bar: 3.5rem;
@@ -45,7 +45,7 @@ body {
     padding: 0;
     box-sizing: border-box;
 
-    background: var(--gradient__background);
+    background: var(--linear-gradient__background);
     /* background-color: var(--hex__background, #faf4f4); */
     color: var(--hex__text, #292727);
     
@@ -288,18 +288,47 @@ span.heading__profession {
 }
 
 div.project.wrapper {
+    position: relative;
+
     width: var(--width__readable-body);
     margin: 2rem auto;
     padding: 2rem;
 
     background-color: var(--hex__overlay);
     border-radius: 3rem;
-    
+}
+
+div.project.wrapper::after {
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+
+    padding: 0.25rem;
+
+    background: var(--linear-gradient__background);
+    border-radius: 3.25rem;
+    opacity: 0;
+
+    content: "";
+
+    transition: 400ms;
+}
+
+@media (pointer: fine) {
+    div.project.wrapper:hover::after {
+        opacity: 1;
+    }
 }
 
 div.project.title {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) min-content minmax(0, 1fr);
+    /* grid-template-columns: minmax(0, 1fr) min-content minmax(0, 1fr); */
+    grid-template-columns: max-content min-content auto;
 }
 
 .project h3, .project h4 {
