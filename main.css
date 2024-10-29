@@ -295,11 +295,12 @@ div.project.wrapper {
     border-radius: 2rem;
 }
 
+@media only screen and (pointer: fine) {}
 div.project.wrapper::after {
     content: "";
 
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
 
     position: absolute;
     left: var(--x__cursor);
@@ -308,13 +309,12 @@ div.project.wrapper::after {
     z-index: -1;
 
     background-color: var(--hex__accent);
+    background: radial-gradient(#ffffff 10%, var(--hex__accent) 100%);
 
-    will-change: transform;
+    will-change: translate;
     border-radius: 50%;
-    filter: blur(25px);
+    filter: blur(15px);
     opacity: var(--opacity__blob);
-    
-    clip-path: inherit;    
 }
 
 /* div.project.wrapper::after {

@@ -29,47 +29,20 @@ const array = ["hi", "helo"];
 const pastProjectsSection = document.getElementById("section__past-projects");
 const pastProjects = Array.from(document.getElementsByClassName("project wrapper"));
 
-document.addEventListener("mousemove", (event) => {
-    /* console.log(event.clientX, event.clientY); */
-    pastProjects.forEach((element) => {
-        const box = element.getBoundingClientRect();
-        const x = event.clientX - box.left;
-        const y = event.clientY - box.top;
-
-        element.style.setProperty("--opacity__blob", "1");
-        element.style.setProperty("--x__cursor", x + "px");
-        element.style.setProperty("--y__cursor", y + "px");
-        console.log(element);
-    });
+if (window.matchMedia("(pointer: fine)").matches) {
+    document.addEventListener("mousemove", (event) => {
+        pastProjects.forEach((element) => {
+            const box = element.getBoundingClientRect();
+            const x = event.clientX - box.left;
+            const y = event.clientY - box.top;
     
-});
-
-
-pastProjectsSection.addEventListener("mousemove", (event) => {
-        /* const box = event.target.getBoundingClientRect();
-        const x = event.clientX - box.left;
-        const y = event.clientY - box.top;
-
-        event.target.style.setProperty("--opacity__blob", "1");
-        event.target.style.setProperty("--x__cursor", x + "px");
-        event.target.style.setProperty("--y__cursor", y + "px"); */
-    /* if (event.target.classList.contains("project")) {
-        const box = event.target.getBoundingClientRect();
-        const x = event.clientX - box.left;
-        const y = event.clientY - box.top;
-
-        event.target.style.setProperty("--opacity__blob", "1");
-        event.target.style.setProperty("--x__cursor", x + "px");
-        event.target.style.setProperty("--y__cursor", y + "px");
-    } */
-});
+            element.style.setProperty("--opacity__blob", "1");
+            element.style.setProperty("--x__cursor", x + "px");
+            element.style.setProperty("--y__cursor", y + "px");
+        });
         
-
-/* pastProjectsSection.addEventListener("mouseout",(event) => {
-    if (event.target.classList.contains("project") && event.target.classList.contains("wrapper")) {
-        event.target.style.setProperty("--opacity__blob", "0");
-    }
-}); */
+    });
+}
 
 function followCursor() {
 
