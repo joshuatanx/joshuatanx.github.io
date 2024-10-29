@@ -272,12 +272,12 @@ div.heading__profession.wrapper {
 
 @property --x__cursor {
     syntax: "<length>";
-    initial-value: 100px;
+    initial-value: 0px;
 }
 
 @property --y__cursor {
     syntax: "<length>";
-    initial-value: -50px;
+    initial-value: 0px;
 }
 
 div.project.wrapper {
@@ -288,7 +288,7 @@ div.project.wrapper {
     width: var(--width__readable-body);
     margin: 2rem auto;
     padding: 2rem;
-
+    z-index: 1;
     overflow: hidden;
 
     background-color: var(--hex__overlay);
@@ -309,6 +309,7 @@ div.project.wrapper::after {
 
     background-color: var(--hex__accent);
 
+    will-change: transform;
     border-radius: 50%;
     filter: blur(25px);
     opacity: var(--opacity__blob);

@@ -24,13 +24,36 @@ const professions = {
     cooldown: 30
 };
 
+const array = ["hi", "helo"];
+
 const pastProjectsSection = document.getElementById("section__past-projects");
-console.log("🚀 ~ pastProjectsSection:", pastProjectsSection);
-pastProjectsSection.addEventListener("mousemove",(event) => {
-    /* if (event.target.className === "project wrapper") {
+const pastProjects = Array.from(document.getElementsByClassName("project wrapper"));
+
+document.addEventListener("mousemove", (event) => {
+    /* console.log(event.clientX, event.clientY); */
+    pastProjects.forEach((element) => {
+        const box = element.getBoundingClientRect();
+        const x = event.clientX - box.left;
+        const y = event.clientY - box.top;
+
+        element.style.setProperty("--opacity__blob", "1");
+        element.style.setProperty("--x__cursor", x + "px");
+        element.style.setProperty("--y__cursor", y + "px");
+        console.log(element);
+    });
+    
+});
+
+
+pastProjectsSection.addEventListener("mousemove", (event) => {
+        /* const box = event.target.getBoundingClientRect();
+        const x = event.clientX - box.left;
+        const y = event.clientY - box.top;
+
         event.target.style.setProperty("--opacity__blob", "1");
-    } */
-    if (event.target.classList.contains("project")) {
+        event.target.style.setProperty("--x__cursor", x + "px");
+        event.target.style.setProperty("--y__cursor", y + "px"); */
+    /* if (event.target.classList.contains("project")) {
         const box = event.target.getBoundingClientRect();
         const x = event.clientX - box.left;
         const y = event.clientY - box.top;
@@ -38,7 +61,7 @@ pastProjectsSection.addEventListener("mousemove",(event) => {
         event.target.style.setProperty("--opacity__blob", "1");
         event.target.style.setProperty("--x__cursor", x + "px");
         event.target.style.setProperty("--y__cursor", y + "px");
-    }
+    } */
 });
         
 
