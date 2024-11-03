@@ -300,16 +300,6 @@ div.heading__profession.wrapper {
     }
 }
 
-@property --x__cursor {
-    syntax: "<length>";
-    initial-value: 0px;
-}
-
-@property --y__cursor {
-    syntax: "<length>";
-    initial-value: 0px;
-}
-
 div.project.wrapper {
     --opacity__blob: 0;
 
@@ -318,8 +308,6 @@ div.project.wrapper {
     width: var(--width__readable-body);
     margin: 2rem auto;
     padding: 2rem;
-    /* z-index: 1; */
-    /* overflow: hidden; */
 
     background-color: var(--hex__overlay);
     border-radius: 2rem;
@@ -334,14 +322,6 @@ div.project.wrapper {
         gap: 2rem;
     }
 
-    /* div.project.wrapper {
-        display: float;
-        
-        width: var(--width__half-column);
-        margin: 0 auto;
-        break-inside: avoid;
-    } */
-
     div.project.wrapper {
         width: var(--width__half-column);
         margin: 2rem auto 0;
@@ -353,35 +333,10 @@ div.project.wrapper {
     }
 }
 
-/* div.project.wrapper::after {
-    content: "";
-
-    width: 75px;
-    height: 75px;
-
-    position: absolute;
-    left: var(--x__cursor);
-    top: var(--y__cursor);
-    translate: -50% -50%;
-    z-index: -1;
-
-    background-color: var(--hex__accent);
-    background: radial-gradient(#ffffff 10%, var(--hex__accent) 100%);
-
-    will-change: translate;
-    border-radius: 50%;
-    filter: blur(15px);
-    opacity: var(--opacity__blob);
-} */
-
 .project.title h3 {
     width: fit-content;
     margin: auto;
     text-align: center;
-}
-
-.project.title span {
-    display: none;
 }
 
 ul.chips {
@@ -398,32 +353,6 @@ ul.chips {
     height: fit;
     list-style-type: none;
 }
-
-/* @media (width >= 576px)
-{
-    div.project.title {
-        display: grid;
-        grid-template-columns: max-content min-content auto;
-    }
-    .project.title h3 {
-        width: fit-content;
-        margin: auto 1rem;
-        text-align: right;
-        justify-self: right;
-    }
-    
-    .project.title span {
-        display: inline;
-        width: 0.1rem;
-        height: 75%;
-        margin: auto 0;
-        background-color: var(--hex__text);
-    }
-
-    ul.chips {
-        justify-content: left;
-    }
-} */
 
 @media (width >= 576px) {
     div.project.title {
@@ -472,6 +401,10 @@ li.chip p {
 }
 
 @media (width >= 350px) {
+    li.chip {
+        align-items: left;
+    }
+
     li.chip p {
         display: inline;
         padding: 0;

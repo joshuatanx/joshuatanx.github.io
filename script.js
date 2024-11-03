@@ -25,30 +25,6 @@ const professions = {
     cooldown: 30
 };
 
-const array = ["hi", "helo"];
-
-const pastProjectsSection = document.getElementById("section__past-projects");
-const pastProjects = Array.from(document.getElementsByClassName("project wrapper"));
-
-if (matchMedia("(pointer: fine)").matches) {
-    document.addEventListener("mousemove", (event) => {
-        pastProjects.forEach((element) => {
-            const box = element.getBoundingClientRect();
-            const x = event.clientX - box.left;
-            const y = event.clientY - box.top;
-    
-            element.style.setProperty("--opacity__blob", "1");
-            element.style.setProperty("--x__cursor", x + "px");
-            element.style.setProperty("--y__cursor", y + "px");
-        });
-        
-    });
-}
-
-function followCursor() {
-
-}
-
 observer.observe(profession);
 profession.addEventListener("animationiteration", () => {
     cycleProfession(document.getElementById("profession"), professions, 40);
