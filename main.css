@@ -417,12 +417,26 @@ li.chip {
 }
 
 div.project.image_gallery {
+    display: flex;
+    height: var(--width__readable-body);
+
+    overflow-x: scroll;
+    gap: 0.5rem;
+
+    scroll-snap-type: x mandatory;
+}
+
+/* div.project.image_gallery {
     display: grid;
     gap: 0.3rem;
     width: inherit;
-}
 
-@media (width >= 576px) {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    text-wrap: nowrap;
+} */
+
+/* @media (width >= 576px) {
     div.project.image_gallery {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -432,9 +446,24 @@ div.project.image_gallery {
     div.project.image_gallery {
         grid-template-columns: repeat(4, 1fr);
     }
+} */
+
+.project.image_gallery img {
+    height: 100%;
+    width: var(--width__readable-body);
+
+    scroll-snap-align: center;
+
+    border-radius: 1.25rem;
 }
 
-img.project {
+@media (width >= 576px) {
+    div.project.image_gallery {
+        height: calc(var(--width__readable-body) / 2);
+    }
+}
+
+/* img.project {
     display: block;
 
     margin: 0;
@@ -446,4 +475,4 @@ img.project {
     border-radius: 1.25rem;
 
     user-select: none;
-}
+} */
