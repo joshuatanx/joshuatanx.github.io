@@ -13,9 +13,10 @@ const observer = new IntersectionObserver(handleIntersection, options);
 const profession = document.getElementById("profession");
 const professions = {
     text: ["a university student",
-        "a wannabe software engineer",
         "studying math and CS for AI",
+        "a social media manager",
         "a guitarist",
+        "a wannabe software engineer",
         "learning web development",
         "a music producer",
         "an occasional fashion designer",
@@ -29,7 +30,7 @@ const array = ["hi", "helo"];
 const pastProjectsSection = document.getElementById("section__past-projects");
 const pastProjects = Array.from(document.getElementsByClassName("project wrapper"));
 
-if (window.matchMedia("(pointer: fine)").matches) {
+if (matchMedia("(pointer: fine)").matches) {
     document.addEventListener("mousemove", (event) => {
         pastProjects.forEach((element) => {
             const box = element.getBoundingClientRect();
