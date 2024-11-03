@@ -173,6 +173,11 @@ h4 {
     font-weight: var(--font-weight__h4);
 }
 
+a {
+    color: var(--hex__text);
+    transition: 0.2s;
+}
+
 header {
     position: sticky;
     top: 1.25rem;
