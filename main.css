@@ -27,6 +27,7 @@
     --width__heading: min(88vw, 800px);
     --width__readable-body: min(68vw, 700px);
     --width__project: min(72.9vw, 850px);
+    --width__half-column: min(40vw, 700px);
 
     --height__nav-bar: 3.5rem;
 }
@@ -167,7 +168,7 @@ header {
     animation-timeline: scroll();
     
     animation-range: 0 6rem;
-
+    
     margin: 1rem auto;
     padding: 0.75rem 0.75rem;
     
@@ -289,14 +290,31 @@ div.project.wrapper {
     width: var(--width__readable-body);
     margin: 2rem auto;
     padding: 2rem;
-    z-index: 1;
+    /* z-index: 1; */
     overflow: hidden;
 
     background-color: var(--hex__overlay);
     border-radius: 2rem;
 }
 
-@media only screen and (pointer: fine) {}
+@media (width >= 992px)
+{
+    #container__past-projects {
+        column-count: 2;
+        width: fit-content;
+        margin: 2rem auto;
+        gap: 2rem;
+        
+    }
+
+    div.project.wrapper {
+        /* width: calc(var(--width__readable-body) / 2); */
+        
+        width: var(--width__half-column);
+        margin: 0 auto 2rem;
+    }
+}
+
 div.project.wrapper::after {
     content: "";
 
@@ -317,33 +335,6 @@ div.project.wrapper::after {
     filter: blur(15px);
     opacity: var(--opacity__blob);
 }
-
-/* div.project.wrapper::after {
-    height: 100%;
-    width: 100%;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-
-    padding: 0.25rem;
-
-    background: var(--linear-gradient__background);
-    border-radius: 2.25rem;
-    opacity: 0;
-
-    content: "";
-
-    transition: 400ms;
-}
-
-@media (pointer: fine) {
-    div.project.wrapper:hover::after {
-        opacity: 1;
-    }
-} */
 
 .project.title h3 {
     width: fit-content;
@@ -413,6 +404,7 @@ li.chip {
 .project p {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    width: 100%;
     text-align: center;
 }
 
