@@ -361,8 +361,8 @@ ul.chips {
     }
 
     .project.title h3 {
-        width: max-content;
-        margin: auto 0 auto 1rem;
+        width: 50%;
+        margin: auto 0;
         padding-right: 1rem;
         text-align: right;
         justify-self: left;
@@ -370,6 +370,7 @@ ul.chips {
     }
 
     ul.chips {
+        width: 50%;
         justify-content: left;
     }
 }
