@@ -32,6 +32,35 @@
     --height__nav-bar: 3.5rem;
 }
 
+img.icon.c {
+    content: url("assets/svg/icons/icon__c.svg");
+}
+
+img.icon.cmake {
+    content: url("assets/svg/icons/icon__cmake.svg");
+}
+
+img.icon.cpp {
+    content: url("assets/svg/icons/icon__cpp.svg");
+}
+
+img.icon.css3 {
+    content: url("assets/svg/icons/icon__css3.svg");
+}
+
+img.icon.html5 {
+    content: url("assets/svg/icons/icon__html5.svg");
+}
+
+img.icon.javascript {
+    content: url("assets/svg/icons/icon__javascript.svg");
+}
+
+img.icon.sdl2 {
+    content: url("assets/svg/icons/icon__sdl.svg");
+}
+
+
 html {
     font-family: "Poppins", Poppins, sans-serif;
 }
@@ -393,18 +422,39 @@ ul.chips {
     }
 }
 
-
-
 ul.chips::-webkit-scrollbar {
     display: none;
 }
 
 li.chip {
+    display: flex;
+    
     margin: 0.25rem;
     padding: 0.5rem 1rem;
-
+    
+    align-items: center;
     background-color: var(--hex__overlay);
     border-radius: 1.25rem;
+}
+
+li.chip img {
+    padding: 0;
+    margin-right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+li.chip p {
+    display: none;
+}
+
+@media (width >= 350px) {
+    li.chip p {
+        display: inline;
+        padding: 0;
+        margin: 0 0 0 0.5rem;
+        text-indent: 0;
+    }
 }
 
 .project p {
