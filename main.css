@@ -200,7 +200,6 @@ header {
     
     margin: 1rem auto;
     padding: 0.75rem 0.75rem;
-    
     width: fit-content;
     height: fit-content;
     /* height: var(--height__nav-bar); */
@@ -345,8 +344,12 @@ div.project.wrapper {
 
     div.project.wrapper {
         width: var(--width__half-column);
-        margin: 0 auto 2rem;
+        margin: 2rem auto 0;
         break-inside: avoid;
+    }
+
+    div.project.wrapper:nth-child(1) {
+        margin-top: 0;
     }
 }
 
@@ -396,7 +399,7 @@ ul.chips {
     list-style-type: none;
 }
 
-@media (width >= 576px)
+/* @media (width >= 576px)
 {
     div.project.title {
         display: grid;
@@ -415,6 +418,26 @@ ul.chips {
         height: 75%;
         margin: auto 0;
         background-color: var(--hex__text);
+    }
+
+    ul.chips {
+        justify-content: left;
+    }
+} */
+
+@media (width >= 576px) {
+    div.project.title {
+        display: flex;
+        align-items: center;
+    }
+
+    .project.title h3 {
+        width: max-content;
+        margin: auto 0 auto 1rem;
+        padding-right: 1rem;
+        text-align: right;
+        justify-self: left;
+        border-right: 0.1rem var(--hex__text) solid;
     }
 
     ul.chips {
