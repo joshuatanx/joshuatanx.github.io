@@ -418,7 +418,7 @@ li.chip {
 
 div.project.image_gallery {
     display: flex;
-    height: var(--width__readable-body);
+    height: fit-content;
 
     overflow-x: scroll;
     gap: 0.5rem;
@@ -426,31 +426,10 @@ div.project.image_gallery {
     scroll-snap-type: x mandatory;
 }
 
-/* div.project.image_gallery {
-    display: grid;
-    gap: 0.3rem;
-    width: inherit;
-
-    overflow-x: scroll;
-    overflow-y: hidden;
-    text-wrap: nowrap;
-} */
-
-/* @media (width >= 576px) {
-    div.project.image_gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (width >= 768px) {
-    div.project.image_gallery {
-        grid-template-columns: repeat(4, 1fr);
-    }
-} */
-
-.project.image_gallery img {
+.project.image_gallery > * {
     height: 100%;
-    width: var(--width__readable-body);
+    width: calc(var(--width__readable-body) * 0.9);
+    object-fit: contain;
 
     scroll-snap-align: center;
 
@@ -463,16 +442,8 @@ div.project.image_gallery {
     }
 }
 
-/* img.project {
-    display: block;
-
-    margin: 0;
-    padding: 0;
-
-    width: 100%;
-    object-fit: contain;
-
-    border-radius: 1.25rem;
-
-    user-select: none;
-} */
+@media (width >= 768px) {
+    div.project.image_gallery {
+        height: calc(var(--width__readable-body) / 3);
+    }
+}
