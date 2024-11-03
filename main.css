@@ -291,7 +291,7 @@ div.project.wrapper {
     margin: 2rem auto;
     padding: 2rem;
     /* z-index: 1; */
-    overflow: hidden;
+    /* overflow: hidden; */
 
     background-color: var(--hex__overlay);
     border-radius: 2rem;
@@ -304,18 +304,24 @@ div.project.wrapper {
         width: fit-content;
         margin: 2rem auto;
         gap: 2rem;
-        
     }
 
-    div.project.wrapper {
-        /* width: calc(var(--width__readable-body) / 2); */
+    /* div.project.wrapper {
+        display: float;
         
         width: var(--width__half-column);
+        margin: 0 auto;
+        break-inside: avoid;
+    } */
+
+    div.project.wrapper {
+        width: var(--width__half-column);
         margin: 0 auto 2rem;
+        break-inside: avoid;
     }
 }
 
-div.project.wrapper::after {
+/* div.project.wrapper::after {
     content: "";
 
     width: 75px;
@@ -334,7 +340,7 @@ div.project.wrapper::after {
     border-radius: 50%;
     filter: blur(15px);
     opacity: var(--opacity__blob);
-}
+} */
 
 .project.title h3 {
     width: fit-content;
