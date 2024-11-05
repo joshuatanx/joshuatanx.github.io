@@ -94,6 +94,59 @@ function handleSectionIntersection(entries, sectionObserver) {
             document.getElementById("heading__scroll-down").style.rotate = "180deg";
             document.getElementById("heading__scroll-down").style.opacity = "0";
             setTimeout(function() {document.getElementById("heading__scroll-down").style.visibility = "hidden";}, 300);
+            
+            switch (entry.target.id) {
+                case "section__past-projects":
+                    for (let i = 0; i < navBarLinks.length; i++)
+                    {
+                        if (navBarLinks[i].id == "link__work")
+                        {
+                            navBarLinks[i].classList.remove("inactive");
+                            navBarLinks[i].classList.add("active");
+                        }
+                        else
+                        {
+                            navBarLinks[i].classList.remove("active");
+                            navBarLinks[i].classList.add("inactive");
+                        }
+                    }
+                    break;
+                
+                case "section__about":
+                    for (let i = 0; i < navBarLinks.length; i++)
+                    {
+                        if (navBarLinks[i].id == "link__about")
+                        {
+                            navBarLinks[i].classList.remove("inactive");
+                            navBarLinks[i].classList.add("active");
+                        }
+                        else
+                        {
+                            navBarLinks[i].classList.remove("active");
+                            navBarLinks[i].classList.add("inactive");
+                        }
+                    }
+                    break;
+
+                case "section__contact":
+                    for (let i = 0; i < navBarLinks.length; i++)
+                    {
+                        if (navBarLinks[i].id == "link__contact")
+                        {
+                            navBarLinks[i].classList.remove("inactive");
+                            navBarLinks[i].classList.add("active");
+                        }
+                        else
+                        {
+                            navBarLinks[i].classList.remove("active");
+                            navBarLinks[i].classList.add("inactive");
+                        }
+                    }
+                    break;
+            
+                default:
+                    break;
+            }
         }
     });
 }
