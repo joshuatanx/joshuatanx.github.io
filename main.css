@@ -32,6 +32,13 @@
     --height__nav-bar: 3.5rem;
 }
 
+@font-face {
+    font-family: 'Gendy Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gendy Regular'), url('assets/fonts/Gendy.woff') format('woff');
+}
+
 img.icon.c {
     content: url("assets/svg/icons/icon__c.svg");
 }
@@ -140,6 +147,10 @@ body {
     rotate: var(--bg__blob-angle);
     animation: background__float 60s linear infinite;
 }
+
+/* h1 {
+    font-family: "Gendy Regular", Gendy Regular, Sans-Serif;
+} */
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
