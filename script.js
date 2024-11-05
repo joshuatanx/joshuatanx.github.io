@@ -2,14 +2,6 @@ function convertRemToPixels(rem) {
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
-const options = {
-    root: document.getElementById("heading__profession-list"),
-    rootMargin: "0px",
-    threshold: 1.0,
-};
-
-const observer = new IntersectionObserver(handleIntersection, options);
-
 const profession = document.getElementById("profession");
 const professions = {
     text: ["a university student",
@@ -25,7 +17,6 @@ const professions = {
     cooldown: 30
 };
 
-observer.observe(profession);
 profession.addEventListener("animationiteration", () => {
     cycleProfession(document.getElementById("profession"), professions, 40);
 });
@@ -60,15 +51,25 @@ function cycleProfession(element, professions, cooldown) {
     }
 }
 
+const options = {
+    root: null,
+    rootMargin: "-60% 0% -40% 0%",
+    threshold: 0,
+};
 
+const sectionObserver = new IntersectionObserver(handleSectionIntersection, options);
+const sectionPastProjects = document.getElementById("section__past-projects");
+sectionObserver.observe(sectionPastProjects);
+console.log(sectionPastProjects);
 
-
-
-function handleIntersection(entries, observer) {
+function handleSectionIntersection(entries, sectionObserver) {
     entries.forEach((entry) => {
-        if (entry.intersectionRatio >= 0.5) {
-            
+        /* sectionPastProjects.style.opacity = "1"; */
+        console.log("hi")
+        if (entry.isIntersecting) {
+            sectionPastProjects.style.opacity = "1";
+            sectionPastProjects.style.transform = "translate(0)";
+            sectionPastProjects.style.filter = "blur(0)";
         }
-        
     });
 }
