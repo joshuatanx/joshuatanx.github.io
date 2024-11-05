@@ -370,7 +370,7 @@ section {
 }
 
 div.project.wrapper {
-    --opacity__blob: 0;
+    flex-shrink: 0;
 
     position: relative;
 
