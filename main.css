@@ -375,9 +375,9 @@ div.project.wrapper {
 
     position: relative;
 
-    /* width: var(--width__readable-body);
-    margin: 2rem auto; */
-    padding: 3rem;
+    width: var(--width__readable-body);
+    margin: 2rem auto;
+    padding: 2rem;
 
     background-color: var(--hex__overlay);
     border-radius: 2rem;
@@ -488,7 +488,7 @@ li.chip p {
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 100%;
-    text-align: center;
+    text-align: justify;
 }
 
 div.project.image_gallery {
@@ -528,7 +528,7 @@ div.project.image_gallery {
     width: var(--width__readable-body);
 
     margin: 2rem auto;
-    padding: 3rem;
+    padding: 2rem;
     
     text-align: justify;
 
