@@ -193,6 +193,7 @@ a {
 header {
     position: sticky;
     top: 1.25rem;
+    z-index: 1;
 }
 
 @keyframes nav-bar__appear {
