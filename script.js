@@ -70,6 +70,9 @@ function handleSectionIntersection(entries, sectionObserver) {
             sectionPastProjects.style.opacity = "1";
             sectionPastProjects.style.transform = "translate(0)";
             sectionPastProjects.style.filter = "blur(0)";
+            document.getElementById("heading__scroll-down").style.rotate = "180deg";
+            document.getElementById("heading__scroll-down").style.opacity = "0";
+            setTimeout(function() {document.getElementById("heading__scroll-down").style.visibility = "hidden";}, 300);
         }
     });
 }

@@ -39,37 +39,38 @@
     src: local('Gendy Regular'), url('assets/fonts/Gendy.woff') format('woff');
 }
 
-img.icon.c {
-    content: url("assets/svg/icons/icon__c.svg");
+img.logo.c {
+    content: url("assets/svg/logos/logo__c.svg");
 }
 
-img.icon.cmake {
-    content: url("assets/svg/icons/icon__cmake.svg");
+img.logo.cmake {
+    content: url("assets/svg/logos/logo__cmake.svg");
 }
 
-img.icon.cpp {
-    content: url("assets/svg/icons/icon__cpp.svg");
+img.logo.cpp {
+    content: url("assets/svg/logos/logo__cpp.svg");
 }
 
-img.icon.css3 {
-    content: url("assets/svg/icons/icon__css3.svg");
+img.logo.css3 {
+    content: url("assets/svg/logos/logo__css3.svg");
 }
 
-img.icon.html5 {
-    content: url("assets/svg/icons/icon__html5.svg");
+img.logo.html5 {
+    content: url("assets/svg/logos/logo__html5.svg");
 }
 
-img.icon.javascript {
-    content: url("assets/svg/icons/icon__javascript.svg");
+img.logo.javascript {
+    content: url("assets/svg/logos/logo__javascript.svg");
 }
 
-img.icon.sdl2 {
-    content: url("assets/svg/icons/icon__sdl.svg");
+img.logo.sdl2 {
+    content: url("assets/svg/logos/logo__sdl.svg");
 }
 
 
 html {
     font-family: "Poppins", Poppins, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -271,7 +272,7 @@ header {
 }
 
 div.heading {
-    margin: 5rem auto 10rem;
+    margin: 5rem auto;
 }
 
 .heading h1 {
@@ -283,6 +284,12 @@ div.heading {
     display: inline;
     margin-top: 0;
     margin-bottom: 1rem;
+}
+
+@keyframes caret {
+    50% {
+      border-color: transparent;
+    }
 }
 
 div.heading__profession.wrapper {
@@ -314,10 +321,41 @@ div.heading__profession.wrapper {
     animation: heading__profession-type 0.08s infinite;
 }
 
-@keyframes caret {
-    50% {
-      border-color: transparent;
+@keyframes scrolled-down {
+    0% {
+
     }
+}
+
+@keyframes arrow-idle {
+    0% {
+        transform: translate(0, 0);
+    }
+    /* 35% {
+        transform: translate(0, -1rem);
+    } */
+    50% {
+        transform: translate(0, 1rem);
+    }
+    /* 85% {
+        transform: translate(0, -1rem);
+    } */
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+#heading__scroll-down {
+    display: block;
+    visibility: visible;
+
+    width: 5rem;
+    margin: 2rem auto;
+
+    color: var(--hex__text);
+
+    transition: 0.7s;
+    animation: arrow-idle 1.5s ease-in-out infinite;
 }
 
 section {
