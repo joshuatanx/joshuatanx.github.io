@@ -2,6 +2,30 @@ function convertRemToPixels(rem) {
     return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
+const navBar = document.getElementById("nav-bar");
+const navBarLinks = Array.from(navBar.children[0].children);
+
+for (let i = 0; i < navBarLinks.length; i++)
+{
+    navBarLinks[i].addEventListener("click", function() {
+        for (let j = 0; j < navBarLinks.length; j++)
+        {
+            navBarLinks[j].classList.remove("active");
+            navBarLinks[j].classList.add("inactive");
+        }
+
+        navBarLinks[i].classList.remove("inactive");
+        navBarLinks[i].classList.add("active");
+    });
+}
+
+/* navBar.addEventListener("click", function(event) {
+    if (event.target.tagName == "span")
+    {
+        console.log("UHL")
+    }
+}); */
+
 const profession = document.getElementById("profession");
 const professions = {
     text: ["a university student",
@@ -45,31 +69,28 @@ function cycleProfession(element, professions, cooldown) {
             professions.cooldown--;
             return;
         }
-
         professions.counter = (professions.counter + 1) % professions.text.length;
         professions.cooldown = cooldown;
     }
 }
 
-const options = {
-    root: null,
+
+const sectionObserver = new IntersectionObserver(handleSectionIntersection, {
     rootMargin: "-60% 0% -40% 0%",
     threshold: 0,
-};
-
-const sectionObserver = new IntersectionObserver(handleSectionIntersection, options);
-const sectionPastProjects = document.getElementById("section__past-projects");
-sectionObserver.observe(sectionPastProjects);
-console.log(sectionPastProjects);
+});
+const sectionPastProjects = document.getElementsByTagName("section");
+for (let i = 0; i < sectionPastProjects.length; i++)
+{
+    sectionObserver.observe(sectionPastProjects[i]);
+}
 
 function handleSectionIntersection(entries, sectionObserver) {
     entries.forEach((entry) => {
-        /* sectionPastProjects.style.opacity = "1"; */
-        console.log("hi")
         if (entry.isIntersecting) {
-            sectionPastProjects.style.opacity = "1";
-            sectionPastProjects.style.transform = "translate(0)";
-            sectionPastProjects.style.filter = "blur(0)";
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translate(0)";
+            entry.target.style.filter = "blur(0)";
             document.getElementById("heading__scroll-down").style.rotate = "180deg";
             document.getElementById("heading__scroll-down").style.opacity = "0";
             setTimeout(function() {document.getElementById("heading__scroll-down").style.visibility = "hidden";}, 300);

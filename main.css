@@ -210,7 +210,7 @@ header {
     }
 }
 
-.nav-bar ul {
+#nav-bar ul {
     animation: nav-bar__appear linear;
     animation-timeline: scroll();
     
@@ -238,37 +238,37 @@ header {
     align-items: center;
 }
 
-.nav-bar li {
+#nav-bar li {
     margin: 0 0.7rem;
     padding: 0.5rem 1rem;
     transition-duration: 300ms;
     border-radius: 1.5rem;
 }
 
-.nav-bar li.active {
+#nav-bar li.active {
     opacity: 100%;
 }
 
-.nav-bar li.inactive {
+#nav-bar li.inactive {
     opacity: var(--opacity__inactive);
 }
 
-.nav-bar li a {
+#nav-bar li a {
     display: inline-block;
     text-decoration: none;
     
 }
 
-.nav-bar a:link, a:visited {
+#nav-bar a:link, a:visited {
     color: var(--hex__text);
 }
 
-.nav-bar li:hover {
+#nav-bar li:hover {
     opacity: 100%;
     background-color: var(--hex__accent);
 }
 
-.nav-bar a:active {
+#nav-bar a:active {
     color: var(--hex__text);
 }
 
@@ -374,8 +374,8 @@ div.project.wrapper {
 
     position: relative;
 
-    width: var(--width__readable-body);
-    margin: 2rem auto;
+    /* width: var(--width__readable-body);
+    margin: 2rem auto; */
     padding: 2rem;
 
     background-color: var(--hex__overlay);
