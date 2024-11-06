@@ -529,7 +529,7 @@ li.chip p {
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 100%;
-    text-align: justify;
+    text-align: left;
 }
 
 div.project.image_gallery {
@@ -582,7 +582,7 @@ div.about {
     margin-top: 1rem;
     margin-bottom: 0;
     width: 100%;
-    text-align: justify;
+    text-align: left;
 }
 
 div.experience.wrapper {
@@ -663,7 +663,7 @@ div.experience.wrapper {
     margin-top: 0.5rem;
     margin-bottom: 0;
     width: 100%;
-    text-align: justify;
+    text-align: left;
 }
 
 button {
