@@ -505,7 +505,7 @@ li.chip p {
 
 div.project.image_gallery {
     display: flex;
-    height: fit-content;
+    height: calc(var(--width__readable-body) * 0.9);
     width: 100%;
 
     overflow-x: scroll;
@@ -515,8 +515,9 @@ div.project.image_gallery {
 }
 
 .project.image_gallery > * {
+    width: auto;
     height: 100%;
-    width: calc(var(--width__readable-body) * 0.9);
+    
     object-fit: contain;
 
     scroll-snap-align: center;
