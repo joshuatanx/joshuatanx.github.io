@@ -509,7 +509,7 @@ li.chip img {
 
 li.chip p {
     display: none;
-    width: fit-content;
+    width: max-content;
 }
 
 @media (width >= 350px) {
