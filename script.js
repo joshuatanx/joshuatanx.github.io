@@ -150,3 +150,30 @@ function handleSectionIntersection(entries, sectionObserver) {
         }
     });
 }
+
+document.getElementById("contact-form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent default form submission
+  
+    const form = event.target;
+    const formData = new FormData(form); // Create a FormData object
+  
+    // Fetch API to send form data
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json' // Expect a JSON response
+        }
+      });
+  
+      if (response.ok) {
+        document.getElementById("form-response").innerHTML = "<p>Thank you! Your message has been sent.</p>";
+        form.reset(); // Clear the form fields
+      } else {
+        document.getElementById("form-response").innerHTML = "<p>Oops! Something went wrong, please try again.</p>";
+      }
+    } catch (error) {
+      document.getElementById("form-response").innerHTML = "<p>Error: Unable to send the message.</p>";
+    }
+});
