@@ -65,6 +65,10 @@ img.logo.css3 {
     content: url("assets/svg/logos/logo__css3.svg");
 }
 
+img.logo.flask {
+    content: url("assets/svg/logos/logo__flask.svg");
+}
+
 img.logo.github {
     content: url("assets/svg/logos/logo__github.svg");
 }
@@ -87,6 +91,10 @@ img.logo.linkedin {
 
 img.logo.python {
     content: url("assets/svg/logos/logo__python.svg");
+}
+
+img.logo.react {
+    content: url("assets/svg/logos/logo__react.svg");
 }
 
 img.logo.sdl2 {
